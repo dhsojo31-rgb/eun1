@@ -29,6 +29,19 @@ export function App() {
     sound.enabled = settings.sound;
   }, [settings.sound]);
 
+  // 교육자용 바로가기: http://.../#case=case-3  또는 #map
+  useEffect(() => {
+    const hash = window.location.hash.replace(/^#/, '');
+    const m = hash.match(/^case=([\w-]+)$/);
+    if (m && getScenario(m[1])) {
+      setCurrentId(m[1]);
+      setAttempt((a) => a + 1);
+      setScreen('sim');
+    } else if (hash === 'map') {
+      setScreen('map');
+    }
+  }, []);
+
   const scenario = getScenario(currentId) ?? SCENARIOS[0];
 
   const go = (s: Screen) => {
