@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; font-family: Pretendard, "Malgun Gothic", sans-serif; }
+  .bg { position: absolute; inset: 0; }
+  .card {
+    position: absolute; left: 70px; top: 90px; width: 640px; height: 450px;
+    background: rgba(255,255,255,.94); border-radius: 36px; padding: 48px 52px; box-sizing: border-box;
+    box-shadow: 0 30px 80px rgba(28,25,23,.22);
+  }
+  .eyebrow { font-size: 20px; font-weight: 800; letter-spacing: .25em; color: #0f766e; }
+  h1 { margin: 14px 0 0; font-size: 64px; line-height: 1.15; font-weight: 900; color: #1c1917; letter-spacing: -1px; }
+  .sub { margin-top: 18px; font-size: 26px; font-weight: 600; color: #44403c; }
+  .tags { margin-top: 28px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .tag { font-size: 18px; font-weight: 700; color: #115e59; background: #ccfbf1; border-radius: 999px; padding: 8px 16px; }
+  .foot { position: absolute; left: 52px; bottom: 36px; font-size: 18px; color: #78716c; font-weight: 600; }
+  .figure { position: absolute; right: 30px; bottom: -70px; width: 430px; }
+  .bubble {
+    position: absolute; right: 50px; top: 34px; width: 440px; box-sizing: border-box; background: #fff; border-radius: 28px 28px 6px 28px;
+    padding: 18px 24px; font-size: 23px; font-weight: 700; color: #1c1917; box-shadow: 0 20px 50px rgba(0,0,0,.18); z-index: 2;
+    word-break: keep-all; line-height: 1.45;
+  }
+  .bubble small { display: block; font-size: 15px; color: #0f766e; font-weight: 800; margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<svg class="bg" viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf8f3"/><stop offset="1" stop-color="#ece5dc"/></linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9c6ad"/><stop offset="1" stop-color="#c3aa8a"/></linearGradient>
+    <linearGradient id="win" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dff1fb"/><stop offset="1" stop-color="#f6fbfd"/></linearGradient>
+  </defs>
+  <rect width="1200" height="440" fill="url(#wall)"/>
+  <rect y="440" width="1200" height="190" fill="url(#floor)"/>
+  <rect y="430" width="1200" height="12" fill="#cbbba5"/>
+  <g stroke="#b79d7e" stroke-opacity=".35" stroke-width="2"><line x1="0" y1="480" x2="1200" y2="480"/><line x1="0" y1="540" x2="1200" y2="540"/></g>
+  <g id="shelf"><rect x="40" y="110" width="300" height="300" rx="12" fill="#fff" stroke="#e4ddd3" stroke-width="3"/>
+    <g fill="none" stroke-width="3" stroke-linecap="round">
+      <g stroke="#2b2b2b" transform="translate(60 150)"><rect width="26" height="18" rx="7"/><rect x="34" width="26" height="18" rx="7"/><path d="M26 7q4-4 8 0"/></g>
+      <g stroke="#6b4f3a" transform="translate(150 150)"><rect width="26" height="18" rx="7"/><rect x="34" width="26" height="18" rx="7"/><path d="M26 7q4-4 8 0"/></g>
+      <g stroke="#3b5b7a" transform="translate(240 150)"><rect width="26" height="18" rx="7"/><rect x="34" width="26" height="18" rx="7"/><path d="M26 7q4-4 8 0"/></g>
+      <g stroke="#c99a5b" transform="translate(60 240)"><rect width="26" height="18" rx="7"/><rect x="34" width="26" height="18" rx="7"/><path d="M26 7q4-4 8 0"/></g>
+      <g stroke="#1f3a5f" transform="translate(150 240)"><rect width="26" height="18" rx="7"/><rect x="34" width="26" height="18" rx="7"/><path d="M26 7q4-4 8 0"/></g>
+      <g stroke="#8c8c8c" transform="translate(240 240)"><rect width="26" height="18" rx="7"/><rect x="34" width="26" height="18" rx="7"/><path d="M26 7q4-4 8 0"/></g>
+      <g stroke="#5a3e36" transform="translate(60 330)"><rect width="26" height="18" rx="7"/><rect x="34" width="26" height="18" rx="7"/><path d="M26 7q4-4 8 0"/></g>
+      <g stroke="#2b2b2b" transform="translate(150 330)"><rect width="26" height="18" rx="7"/><rect x="34" width="26" height="18" rx="7"/><path d="M26 7q4-4 8 0"/></g>
+      <g stroke="#b08968" transform="translate(240 330)"><rect width="26" height="18" rx="7"/><rect x="34" width="26" height="18" rx="7"/><path d="M26 7q4-4 8 0"/></g>
+    </g>
+    <rect x="55" y="178" width="270" height="7" rx="3" fill="#d9cfc2"/><rect x="55" y="268" width="270" height="7" rx="3" fill="#d9cfc2"/><rect x="55" y="358" width="270" height="7" rx="3" fill="#d9cfc2"/>
+  </g>
+  <rect x="860" y="90" width="300" height="230" rx="12" fill="url(#win)" stroke="#d9d0c3" stroke-width="7"/>
+  <line x1="1010" y1="93" x2="1010" y2="317" stroke="#d9d0c3" stroke-width="7"/><line x1="863" y1="205" x2="1157" y2="205" stroke="#d9d0c3" stroke-width="7"/>
+  <circle cx="1090" cy="150" r="26" fill="#fff4c2"/>
+  <path d="M863 290 Q940 230 1010 275 T1157 265 L1157 317 L863 317Z" fill="#cfe6d2"/>
+  <ellipse cx="200" cy="80" rx="120" ry="45" fill="#fff6d6" opacity=".8"/>
+  <ellipse cx="900" cy="80" rx="120" ry="45" fill="#fff6d6" opacity=".8"/>
+</svg>
+
+<div class="card">
+  <div class="eyebrow">OPTICAL STORE COORDINATOR TRAINING</div>
+  <h1>오늘은 내가<br/>안경원 코디네이터!</h1>
+  <div class="sub">가상 안경원 고객응대 실습 시뮬레이션</div>
+  <div class="tags"><span class="tag">고객 8명 분기형 대화</span><span class="tag">표정·신뢰도 변화</span><span class="tag">실습 결과 리포트</span></div>
+  <div class="foot">고객의 이야기를 듣는 것이 좋은 응대의 시작입니다.</div>
+</div>
+
+<div class="bubble"><small>고객</small>“안경 처음 맞추는데 뭐가 좋은지 잘 모르겠어요.”</div>
+
+<svg class="figure" viewBox="0 0 360 460">
+  <path d="M40 460 C 40 360, 100 330, 150 322 L 210 322 C 260 330, 320 360, 320 460 Z" fill="#3b82f6"/>
+  <path d="M150 322 L 180 372 L 210 322 Z" fill="#1e3a8a"/>
+  <rect x="156" y="272" width="48" height="64" rx="18" fill="#f6d7bf"/>
+  <ellipse cx="86" cy="204" rx="14" ry="20" fill="#f6d7bf"/><ellipse cx="274" cy="204" rx="14" ry="20" fill="#f6d7bf"/>
+  <ellipse cx="180" cy="192" rx="96" ry="108" fill="#f6d7bf"/>
+  <path d="M86 185 C 90 110, 130 82, 180 82 C 230 82, 270 110, 274 185 C 250 150, 220 140, 180 142 C 140 140, 110 150, 86 185 Z" fill="#2f2a28"/>
+  <g fill="#f87171" opacity=".25"><ellipse cx="112" cy="236" rx="18" ry="10"/><ellipse cx="248" cy="236" rx="18" ry="10"/></g>
+  <g stroke="#3a2e2a" stroke-width="6" stroke-linecap="round" fill="none"><path d="M114 168 Q 136 160 158 166"/><path d="M202 166 Q 224 160 246 168"/></g>
+  <ellipse cx="137" cy="196" rx="18" ry="15" fill="#fff"/><ellipse cx="223" cy="196" rx="18" ry="15" fill="#fff"/>
+  <circle cx="139" cy="198" r="9" fill="#3a2e2a"/><circle cx="225" cy="198" r="9" fill="#3a2e2a"/>
+  <circle cx="142" cy="194" r="3" fill="#fff"/><circle cx="228" cy="194" r="3" fill="#fff"/>
+  <path d="M180 212 Q 172 238 184 240" fill="none" stroke="#000" stroke-opacity=".22" stroke-width="4" stroke-linecap="round"/>
+  <path d="M152 254 Q 180 276 208 254" fill="none" stroke="#3a2e2a" stroke-width="5" stroke-linecap="round"/>
+</svg>
+</body>
+</html>
